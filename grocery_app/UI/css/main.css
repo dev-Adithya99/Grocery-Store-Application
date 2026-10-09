@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;   /* stack sections top to bottom */
+}
+.top {
+    flex: 3;                  /* 3 parts */
+    background:orange ;
+    
+}
+  
+.bottom {
+    flex: 7;                  /* 7 parts → 3:7 = 30% : 70% */
+    background: #fff;
+    color: #000;
+    overflow-y: auto;         /* scroll inside if content is too long */
+}
+.page-title {
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    padding-left: 500px;   /* text starts 50px from the left edge */
+    padding-top: 20px;
+    font-family: cursive;
+    font-size: 50px;
+    color: black;
+}
+.page-title::after{
+    content: "";                                 
+    width: 40px;
+    height: 40px;
+    background-image: url("../../Images/groc.png");  
+    background-size: contain;                     
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+.paragraph{
+    display:flex;
+    padding-left: 500px;   
+    font-size: 20px;
+    color:#fff;
+    font-family:'Gill Sans';
+    
+}
+.corner-img {
+    position: fixed;    
+    bottom: 580px;       
+    right: 1250px;       
+    width: 150px;       
+    height: 150px;       
+    z-index: 1000;     
+}
+.bounce{
+    display: inline-block;   
+    font-size: 20px;
+    animation: bounce 1s infinite;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-15px); }
+  }
